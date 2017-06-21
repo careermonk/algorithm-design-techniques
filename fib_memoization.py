@@ -1,12 +1,12 @@
-def fib_memoization(m):
-    table = (m + 1) * [None]
-    def func(n):
-        if table[n] == None:
-            if n <= 1:
-                table[n] = n
+def fib_memoization(n):
+    table = (n + 1) * [None]
+    def func(m):
+        if table[m] == None:
+            if m <= 1:
+                table[m] = m
             else:
-                table[n] = func(n-1) + func(n-2)
-        return table[n]
-    return f(m)
+                table[m] = func(m-1) + func(m-2)
+        return table[m]
+    return func(n)
       
 print(fib_memoization(10))
