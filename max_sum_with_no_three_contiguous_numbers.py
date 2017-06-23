@@ -1,4 +1,4 @@
-def house_robber(A):
+def max_sum_with_no_three_contiguous_numbers(A):
 	n = len(A)
 	M = [0] * (n)
 	M[0] = A[0]
@@ -12,4 +12,4 @@ def house_robber(A):
 	return M[n-1]
 
 A = [2, 13, 16, 100, 4, 5]
-print house_robber(A)
+print max_sum_with_no_three_contiguous_numbers(A)
