@@ -21,9 +21,6 @@ def max_enemy_killed_count_with_bomb(matrix2d):
 		
 	# bottom_to_top: is the cumulative array with vertical direction from bottom to top
 	bottom_to_top = [ [ 0 for j in range(m) ] for i in range(n) ]
-
-        # for each empty cell, how many enemies in the same col will be killed if bomb there
-        col_kill_counts = [ [ 0 for j in range(m) ] for i in range(n) ]
     
 	for i in range(n):
 		for j in range(m):
