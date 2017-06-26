@@ -42,5 +42,3 @@ A=[1, 3, 4, 6, 8, 10, 14, 18, 25, 27, 29, 45]
 left = find_left_boundary(A, 0, len(A)-1, 12)
 right = find_right_boundary(A, 0, len(A)-1, 26)
 print A[left:right]
-
-print A[X]
