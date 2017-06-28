@@ -8,18 +8,18 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def count_fence_painting_ways(n, k):
+	temp = 0
+	previous_one = k
+	previous_two = k*k
+	if n == 0: return temp
+	if n == 1: return previous_one
+	if n == 2: return previous_two
+	for i in range(3, n):
+		current = (k - 1) * (previous_two + previous_one)
+		previous_one = previous_two
+		previous_two = current
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
+	return current
 
-print unique_digits(2)
-print unique_digits(3)
+print count_fence_painting_ways(5,4)

@@ -8,18 +8,13 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def catalan_recursive(n):
+  if n == 0:
+    return 1
+  else:
+    count = 0
+    for i in range(n):
+      count += catalan_recursive(i) * catalan_recursive(n - 1 - i)
+  return count
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+print catalan_recursive(3)

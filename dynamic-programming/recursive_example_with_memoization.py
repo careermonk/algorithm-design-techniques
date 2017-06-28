@@ -8,18 +8,16 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def func_memoization(m, p):
+    '''Using memoization and using a dictionary as a table.'''
+    table = {}
+    def func(n, r):
+        if (n, r) not in table:
+            if r == 0 or n == r:
+                table[n, r] = 1
+            else:
+                table[n, r] = func(n-1, r-1) + func(n-1, r)
+        return table[n, r]
+    return func(m, p)
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+print func_memoization(10, 5)

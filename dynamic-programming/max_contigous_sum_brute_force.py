@@ -8,18 +8,17 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def max_contigous_sum_brute_force(A):
+	maxSum = 0
+	n = len(A)
+	for i in range(1, n):
+		for j in range(i, n):
+			currentSum = 0
+			for k in range(i, j+1):
+				currentSum += A[k]
+				if(currentSum > maxSum):
+					maxSum = currentSum
+	return maxSum
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+A = [1, -3, 4, -2, -1, 6]
+print max_contigous_sum_brute_force(A)

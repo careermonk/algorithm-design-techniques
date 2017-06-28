@@ -8,18 +8,13 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def LCS(X, Y, i, j):
+    if i == -1 or j == -1:
+        return 0
+    if X[i] == Y[j]:
+        return 1 + LCS(X, Y, i-1, j-1)
+    return max(LCS(X, Y, i-1, j), LCS(X, Y, i, j-1))
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+X = 'thisisatest'
+Y = 'testingLCS123testing'
+print (LCS(X, Y, len(X)-1, len(Y)-1))

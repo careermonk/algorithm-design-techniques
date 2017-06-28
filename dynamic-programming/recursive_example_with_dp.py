@@ -8,18 +8,15 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def func_tabulation_dp(m, p):
+    '''Using DP and using a dictionary as a table.'''
+    table = {}
+    for n in range(m+1):
+        for r in range(min(n, p)+1):
+            if r == 0 or n == r:
+                table[n,r] = 1
+            else:
+                table[n,r] = table[n-1,r-1] + table[n-1,r]
+    return table[m,p]
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+print func_tabulation_dp(10, 5)

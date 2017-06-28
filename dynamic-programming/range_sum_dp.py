@@ -8,18 +8,18 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+cumulative_sum = []
+def cumulative_sum_pre_process(A):
+	global cumulative_sum
+	cumulative_sum.append(A[0])
+	for i in range(0, len(A)):
+		cumulative_sum.append(cumulative_sum[i] + A[i])
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
+def range_sum_dp(A, start_index, end_index):
+    return cumulative_sum[end_index+1] - cumulative_sum[start_index]
 
-print unique_digits(2)
-print unique_digits(3)
+A= [-2, 1, 6, -5, 9, -1, 19]
+cumulative_sum_pre_process(A)
+print range_sum_dp(A, 0, 3)
+print range_sum_dp(A, 2, 6)
+print range_sum_dp(A, 5, 5)

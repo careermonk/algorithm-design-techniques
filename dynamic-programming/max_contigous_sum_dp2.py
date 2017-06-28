@@ -8,18 +8,19 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def max_contigous_sum_dp(A):
+	maxSum = 0
+	n = len(A)
+	M = [0] * (n+1)
+	M[n] = A[n-1]
+	for i in range(n-2, 0, -1):
+		M[i] = max(A[i], M[i+1] + A[i])
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
+	for i in range(0, n):
+		if (M[i]  > maxSum):
+			maxSum = M[i]
 
-print unique_digits(2)
-print unique_digits(3)
+	return maxSum
+
+A = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+print max_contigous_sum_dp(A)

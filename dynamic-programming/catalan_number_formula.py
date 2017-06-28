@@ -8,18 +8,16 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+catalan=[]
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
+#1st term is 1
+catalan.append(1)
 
-print unique_digits(2)
-print unique_digits(3)
+for i in range (1,1001):
+  x=catalan[i-1]*(4*i-2)/(i+1)
+  catalan.append(x)
+
+def catalan_number(n):
+  return catalan[n]
+
+print catalan_number(3)

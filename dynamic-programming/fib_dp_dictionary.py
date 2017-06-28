@@ -8,18 +8,14 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def fib_dp_dictionary(n):
+    '''using dynamic programming and using dictionary as a table.'''
+    table = {}
+    for i in range(n+1):
+        if i == 0 or i == 1:
+            table[i] = i
+        else:
+            table[i] = table[i-1] + table[i-2]
+    return table[n]
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+print(fib_dp_dictionary(10))

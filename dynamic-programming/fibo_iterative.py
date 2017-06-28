@@ -8,18 +8,10 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def fibo_iterative(n):
+	a, b = 0, 1
+	for i in range(n):
+		a, b = b, a + b
+	return a
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+print(fibo_iterative(10))

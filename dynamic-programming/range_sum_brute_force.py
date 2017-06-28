@@ -8,18 +8,14 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def range_sum(A, start_index, end_index):
+    sum = 0
+    for i in range(start_index, end_index+1):
+        sum += A[i]
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
+    return sum
 
-print unique_digits(2)
-print unique_digits(3)
+A= [-2, 1, 6, -5, 9, -1, 19]
+print range_sum(A, 0, 3)
+print range_sum(A, 2, 6)
+print range_sum(A, 5, 5)

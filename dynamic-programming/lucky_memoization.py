@@ -8,18 +8,18 @@
 # 				 warranty; without even the implied warranty of
 # 				 merchantability or fitness for a particular purpose.
 
-def unique_digits(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 10
+def lucky_memoization(m):
+	'''Using memoization and using a dictionary as a table.'''
+	table = {}
+	def lucky(n):
+		if n not in table:
+			if n == 0:
+				table[n] = 0
+			elif n == 1:
+				table[n] = 1
+			else:
+				table[n] = 10*lucky(n-1) - lucky(n-2)
+		return table[n]
+	return lucky(m)
 
-	total = 10
-	count = 9
-	for i in xrange(2, n+1):
-		count = count * (10 - i + 1)
-		total += count
-	return total
-
-print unique_digits(2)
-print unique_digits(3)
+print lucky_memoization(3)
