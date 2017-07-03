@@ -2,7 +2,7 @@ def arrange_service_requests( A ):
     # sort the service requests based on their service times
     A.sort()
 
-def waiting_time_of_service_request(A, request_number):
+def min_waiting_time_of_service_request(A, request_number):
     if request_number <= 0 or request_number >= len(A):
         return -1
     return sum(A[:request_number-1])
@@ -11,7 +11,7 @@ def waiting_time_of_service_request(A, request_number):
 A = [3, 16, 9, 3, 5, 1, 4 , 7, 19]
 arrange_service_requests(A)
 
-waiting_time = waiting_time_of_service_request(A, 3)
+waiting_time = min_waiting_time_of_service_request(A, 3)
 print waiting_time
 
 waiting_time = waiting_time_of_service_request(A, 7)
