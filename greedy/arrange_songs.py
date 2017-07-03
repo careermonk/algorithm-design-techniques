@@ -13,7 +13,7 @@ def arrange_songs( A ):
     A.sort()
 
 def forward_time_of_song(A, song_number):
-    if song_number <= 0 or song_number >= len(A):
+    if song_number <= 0 or song_number > len(A):
         return -1
     return sum(A[:song_number-1])
 
