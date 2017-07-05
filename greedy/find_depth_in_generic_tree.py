@@ -1,8 +1,8 @@
 def find_depth_in_generic_tree(parent):
-	max_depth =-1
-	current_depth =-1
+	max_depth = 0
+	current_depth = 0
 	for i in range (0, len(parent)):
-		current_depth = 0
+		current_depth = 1
 		j = i
 		while(parent[j] != -1):
 		       current_depth += 1
