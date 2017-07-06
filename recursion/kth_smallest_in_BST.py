@@ -23,11 +23,14 @@ node1.left, node1.right = node2, node3
 node2.left, node2.right = node4, node5
 node3.left = node6
 
-#result = kth_smallest_in_BST(node1, 3)
-#print result.data
+count = 0
+result = kth_smallest_in_BST(node1, 3)
+print result.data
 
+count = 0
 result = kth_smallest_in_BST(node1, 5)
 print result.data
 
-#result = kth_smallest_in_BST(node1, 2)
-#print result.data
+count = 0
+result = kth_smallest_in_BST(node1, 2)
+print result.data
