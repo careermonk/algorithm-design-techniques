@@ -5,23 +5,6 @@ class BSTNode:
         root.right = None
         root.data = data
 
-def find_min(root):
-	current = root
-	if current is None:  
-		return None
-	while current.left is not None:
-		current = current.left
-	return current
-
-def find_max(root):
-	current = root
-	if current is None:  
-		return None
-	while current.right is not None:
-		current = current.right
-	return current
-
-
 def is_BST(root, min, max):
 	if root is None:
 		return True
