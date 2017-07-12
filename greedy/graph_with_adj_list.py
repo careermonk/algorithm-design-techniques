@@ -1,10 +1,9 @@
-import sys
 class Vertex:
     def __init__(self, node):
         self.id = node
         self.adjacent = {}
         # Set distance to infinity for all nodes
-        self.distance = sys.maxint
+        self.distance = None
         # Mark all nodes unvisited        
         self.visited = False  
         # Predecessor
