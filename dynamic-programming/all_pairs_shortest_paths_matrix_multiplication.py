@@ -85,18 +85,6 @@ def all_pairs_shortest_paths(matrix, infinity):
         D = __special_matrix_multiply(D, D, infinity)
         m = 2 * m
     return D
-    
-def floyd_warshall(matrix, infinity):
-    n = get_num_rows(matrix)
-    D = clone(matrix)
-    DD = create_matrix(n,n)
-    for k in xrange(n):
-        for i in xrange(n):
-            for j in xrange(n):
-                DD[i][j] = min(D[i][j], D[i][k] + D[k][j])
-        DD, D = D, DD
-    return D
-
 
 vertices = [1,2,3,4]
 edgeWeights = [(1,2,5), (2,3,1), (3,1,8), (3,4,3),(4,1,2)]
