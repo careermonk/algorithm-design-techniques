@@ -135,9 +135,13 @@ for i in ["a", "b", "c", "c", "d", "e"]:
 #add edges to the graph - need one for each edge to make them undirected
 #since the edges are unweighted, make all cost 1
 g.add_edge("a", "b", 1)
-g.add_edge("a", "c", 1)
-g.add_edge("c", "b", 1)
+g.add_edge("a", "d", 1)
+g.add_edge("b", "d", 1)
 g.add_edge("b", "e", 1)
-g.add_edge("c", "d", 1)
-g.add_edge("d", "e", 1)
-unweighted_shortest_path(g, "a")            
+g.add_edge("c", "a", 1)
+g.add_edge("c", "f", 1)
+g.add_edge("d", "f", 1)
+g.add_edge("d", "g", 1)
+g.add_edge("e", "g", 1)
+g.add_edge("g", "f", 1)
+unweighted_shortest_path(g, "a")             
