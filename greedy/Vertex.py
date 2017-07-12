@@ -1,34 +1,40 @@
-#This class will implement a vertex for a Graph for the unweighted shortest path problem
 class Vertex:
-    def __init__(self, key):
-        self.id = key
-        self.connectedTo = {}
-        self.parent = None
-        self.distance = None
+    def __init__(self, node):
+        self.id = node
+        self.adjacent = {}
 
-    def setParent(self, par):
-        self.parent = par
+        # Set distance to infinity for all nodes
+        self.distance = sys.maxint
+ 
+        # Mark all nodes unvisited        
+        self.visited = False  
+        
+        # Predecessor
+        self.previous = None
 
-    def getParent(self):
-        return self.parent
+    def add_neighbor(self, neighbor, weight=0):
+        self.adjacent[neighbor] = weight
 
-    def setDist(self, d):
-        self.distance = d
+    def get_connections(self):
+        return self.adjacent.keys()  
 
-    def getDist(self):
-        return self.distance
-
-    def addNeighbor(self, nbr, weight=0):
-        self.connectedTo[nbr] = weight
-
-    def __str__(self):
-        return str(self.id) + " is connected to: " + str([x.id for x in self.connectedTo])
-
-    def getConnections(self):
-        return self.connectedTo.keys()
-
-    def getID(self):
+    def get_vertex_ID(self):
         return self.id
 
-    def getWeight(self, nbr):
-        return self.connectedTo[nbr]
+    def get_weight(self, neighbor):
+        return self.adjacent[neighbor]
+
+    def set_distance(self, dist):
+        self.distance = dist
+
+    def get_distance(self):
+        return self.distance
+
+    def set_previous(self, prev):
+        self.previous = prev
+
+    def set_visited(self):
+        self.visited = True
+
+    def __str__(self):
+        return str(self.id) + ' adjacent: ' + str([x.id for x in self.adjacent])
