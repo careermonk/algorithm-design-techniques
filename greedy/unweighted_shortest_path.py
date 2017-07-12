@@ -4,14 +4,14 @@ class Vertex:
     def __init__(self, key):
         self.id = key
         self.connectedTo = {}
-        self.parent = None
+        self.previous = None
         self.distance = None
 
-    def set_previous(self, par):
-        self.parent = par
+    def set_previous(self, prev):
+        self.previous = prev
 
     def get_previous(self):
-        return self.parent
+        return self.previous
 
     def set_distance(self, d):
         self.distance = d
