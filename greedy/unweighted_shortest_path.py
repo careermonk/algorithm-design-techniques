@@ -1,105 +1,6 @@
-#This class will implement a vertex for a Graph for the
-#unweighted shortest path problem
-class Vertex:
-    def __init__(self, key):
-        self.id = key
-        self.connectedTo = {}
-        self.previous = None
-        self.distance = None
-
-    def set_previous(self, prev):
-        self.previous = prev
-
-    def get_previous(self):
-        return self.previous
-
-    def set_distance(self, d):
-        self.distance = d
-
-    def get_distance(self):
-        return self.distance
-
-    def add_neighbor(self, nbr, weight=0):
-        self.connectedTo[nbr] = weight
-
-    def __str__(self):
-        return str(self.id) + " is connected to: " + str([x.id for x in self.connectedTo])
-
-    def get_connections(self):
-        return self.connectedTo.keys()
-
-    def get_vertex_ID(self):
-        return self.id
-
-    def get_weight(self, nbr):
-        return self.connectedTo[nbr]
-
-class Graph:
-    def __init__(self):
-        self.vertList = {}
-        self.numVertices = 0
-
-    def add_vertex(self, key):
-        self.numVertices += 1
-        newVertex = Vertex(key)
-        self.vertList[key] = newVertex
-        return newVertex
-
-    def get_vertex(self, n):
-        if n in self.vertList:
-            return self.vertList[n]
-        else:
-            return None
-
-    def __contains__(self, n):
-        return n in self.vertList
-
-    def add_edge(self, f, t, cost=0):
-        if f not in self.vertList:
-            nv = self.add_vertex(f)
-        if t not in self.vertList:
-            nv = self.add_vertex(t)
-
-        fVert = self.vertList[f]
-        tVert = self.vertList[t]
-
-        fVert.add_neighbor(tVert, cost)
-
-    def get_vertices(self):
-        return self.vertList.keys()
-
-    def __iter__(self):
-        return (iter(self.vertList.values()))
-
-class Queue:    
-    def __init__(self):
-        '''create an empty FIFO queue'''
-        self.queue = []
-
-    def size(self):
-        '''return number of items in the queue
-        pre: none
-        post: returns number of items in the queue'''
-        return len(self.queue)
-
-    def enqueue(self, data):
-        '''insert data at end of queue
-        pre: none
-        post: data is added to the queue'''
-        self.queue.append(data)
-
-    def front(self):
-        '''return first item in queue
-        pre: queue is not empty; IndexError is raised if empty
-        post: returns first item in the queue'''
-        return self.queue[0]
-
-    def dequeue(self):
-        '''remove and return first item in queue
-        pre: queue is not empty; IndexError is raised if empty
-        post: removes and returns first item in the queue'''
-        return self.queue.pop(0)
-
+from Vertex import *
+from Graph import *
+from Queue import *
 
 def unweighted_shortest_path(g, s): 
     #Create a queue
@@ -144,4 +45,4 @@ g.add_edge("d", "f", 1)
 g.add_edge("d", "g", 1)
 g.add_edge("e", "g", 1)
 g.add_edge("g", "f", 1)
-unweighted_shortest_path(g, "a")             
+unweighted_shortest_path(g, "a") 
