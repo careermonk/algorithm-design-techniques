@@ -6,6 +6,16 @@ def dijkstra(G, s):
 
     #create a priority queue
     pq = PriorityQueue()
+    
+    #set distance for all other vertices to "infinity"
+    inf = float("infinity")
+    for i in ["b", "c", "d", "e", "f", "g"]:
+        v = G.get_vertex(i)
+        v.set_distance(inf)
+    
+    #set distance of source to zero
+    source = G.get_vertex("a")
+    source.set_distance(0)
 
     #insert all vertices into the priority queue (distance is priority)
     for v in G:
@@ -47,13 +57,5 @@ G.add_edge("d", "f", 1)
 G.add_edge("d", "g", 1)
 G.add_edge("e", "g", 1)
 G.add_edge("g", "f", 1)
-#set distance of source to zero
-source = G.get_vertex("a")
-source.set_distance(0)
 
-#set distance for all other vertices to "infinity"
-inf = float("infinity")
-for i in ["b", "c", "d", "e", "f", "g"]:
-    v = G.get_vertex(i)
-    v.set_distance(inf)
 dijkstra(G, "a")
