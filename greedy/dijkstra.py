@@ -9,7 +9,7 @@ def dijkstra(G, s):
     
     #set distance for all other vertices to "infinity"
     inf = float("infinity")
-    for i in ["b", "c", "d", "e", "f", "g"]:
+    for i in G.get_vertices():
         v = G.get_vertex(i)
         v.set_distance(inf)
     
@@ -42,20 +42,16 @@ def dijkstra(G, s):
 G = Graph()
     
 #add vertices to the graph
-for i in ["a", "b", "c", "c", "d", "e"]:
+for i in ["a", "b", "c", "d", "e"]:
     G.add_vertex(i)
 
 #add edges to the graph - need one for each edge to make them undirected
 #since the edges are unweighted, make all cost 1
-G.add_edge("a", "b", 1)
-G.add_edge("a", "d", 1)
-G.add_edge("b", "d", 1)
-G.add_edge("b", "e", 1)
-G.add_edge("c", "a", 1)
-G.add_edge("c", "f", 1)
-G.add_edge("d", "f", 1)
-G.add_edge("d", "g", 1)
-G.add_edge("e", "g", 1)
-G.add_edge("g", "f", 1)
+G.add_edge("a", "b", 4)
+G.add_edge("a", "c", 1)
+G.add_edge("b", "e", 4)
+G.add_edge("c", "b", 2)
+G.add_edge("c", "d", 4)
+G.add_edge("d", "e", 4)
 
 dijkstra(G, "a")
