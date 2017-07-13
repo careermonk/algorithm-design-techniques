@@ -30,7 +30,7 @@ def unweighted_shortest_path(g, s):
 g = Graph()
     
 #add vertices to the graph
-for i in ["a", "b", "c", "c", "d", "e"]:
+for i in ["a", "b", "c", "d", "e"]:
     g.add_vertex(i)
 
 #add edges to the graph - need one for each edge to make them undirected
