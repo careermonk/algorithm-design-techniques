@@ -14,7 +14,7 @@ def dijkstra(G, s):
         v.set_distance(inf)
     
     #set distance of source to zero
-    source = G.get_vertex("a")
+    source = G.get_vertex(s)
     source.set_distance(0)
 
     #insert all vertices into the priority queue (distance is priority)
