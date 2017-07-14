@@ -1,11 +1,11 @@
-def min_refill_gas_stops(stationDist, maxDistance):
+def min_refill_gas_stops(stationDist, carMaxGasCapacity):
     curPos = 0
     minRefill = 0
-    curDistance = maxDistance
+    carRemainingGas = carMaxGasCapacity
     numRefillStations = len(stationDist)
     stops = []
     while(curPos<numRefillStations):
-        while(curPos < numRefillStations and stationDist[curPos] <= curDistance):
+        while(curPos < numRefillStations and stationDist[curPos] <= carRemainingGas):
             curPos += 1
 
         if (curPos >= numRefillStations):
@@ -13,9 +13,9 @@ def min_refill_gas_stops(stationDist, maxDistance):
 
         curPos -= 1
         minRefill += 1
-        curDistance = stationDist[curPos] + maxDistance
-
-        if (stationDist[curPos] < curDistance):
+        carRemainingGas = stationDist[curPos] + carMaxGasCapacity
+        
+        if (stationDist[curPos] < carRemainingGas):
             minRefill += 1
             stops.append(curPos)
     
