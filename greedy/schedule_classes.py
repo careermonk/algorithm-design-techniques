@@ -6,20 +6,32 @@ class ClassTimings(object):
     def __repr__(self):
         return str((self.start, self.finish))
 
+class ClassRoom(object):
+    def __init__(self, roomNumber = 1, finish=0):
+        self.roomNumber = roomNumber
+        self.finish = finish
+
 def schedule_classes(I):
     I.sort(lambda x, y: x.start - y.start) 
-    count = 1
+    classRooms = []
+    classRooms.append(ClassRoom())
     finish = 0
     for i in I:
-        if finish <= i.start:
-            print "Scheduling (", i.start, i.finish, ") in classroom ", count
+        scheduled = False
+	roomNumber = 1
+        for c in classRooms:
+            if c.finish <= i.start:
+                print "Scheduling (", i.start, i.finish, ") in classroom ", c.roomNumber
+                c.finish = i.finish
+                scheduled = True
+                break
+        if (scheduled == False):
+            roomCount = len(classRooms) + 1
             finish = i.finish
-        else:
-            count = count + 1
-            print "Adding new classroom", count
-            print "Scheduling (", i.start, i.finish, ") in classroom ", count
-            finish = i.finish
-    return count
+            classRooms.append(ClassRoom(roomCount, finish))
+            print "Adding new classroom", roomCount
+            print "Scheduling (", i.start, i.finish, ") in classroom ", roomCount
+    return roomCount
 
 if __name__ == '__main__':
     I = []
