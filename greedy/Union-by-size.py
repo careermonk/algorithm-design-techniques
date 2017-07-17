@@ -18,8 +18,8 @@ class DisjointSet:
 	        self.S[root2] += self.S[root1]	    
 	        self.S[root1] = root2
 	    else:
-	        self.S[root2] += self.S[root1]
-	        self.S[root1] = root2
+	        self.S[root1] += self.S[root2]
+	        self.S[root2] = root1
 
 ds = DisjointSet(7)
 ds.UNION(5, 6)
