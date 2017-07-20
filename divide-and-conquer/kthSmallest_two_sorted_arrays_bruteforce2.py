@@ -1,5 +1,4 @@
 def kthSmallest(A, B, k):
-	mergedList= []
 	i=0; j=0; count = 0
 	m = len(A)
 	n = len(B)
@@ -18,11 +17,6 @@ def kthSmallest(A, B, k):
 		return A[i+k-count-1]
 	if(j<n):
 		return B[j+k-count-1]
-	
-	if k < len(mergedList):
-		return mergedList[k-1] 
-	else:
-		return None
 	
 A = [1, 5, 8, 10, 50]
 B = [3, 4, 29, 41, 45, 49, 79, 89]
