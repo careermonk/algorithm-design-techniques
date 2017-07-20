@@ -30,12 +30,12 @@ def kthSmallest2(A, B, k):
 	m = len(A)
 	n = len(B)
 	while i + j < k - 1:
-		if (m > i and (n <= j or A[i] < B[j])) :
+		if (i < m and (j >= n or A[i] < B[j])) :
 			i += 1				
 		else:
 			j +=1
 	
-	if(m > i and (n <= j or A[i] < B[j])):
+	if(i < m and (j >= n or A[i] < B[j])):
 		return A[i]
 	else:
 		return B[j]
