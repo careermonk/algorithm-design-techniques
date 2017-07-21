@@ -22,16 +22,5 @@ def kthSmallest(A, B, k):
 	
 A = [3, 4, 29, 41, 45, 49, 79, 89]
 B = [1, 5, 8, 10, 50]
-print kthSmallest(A, B, 5)
-print kthSmallest(A, B, 2)
-print kthSmallest(A, B, 3)
-print kthSmallest(A, B, 4)
-print kthSmallest(A, B, 5)
-print kthSmallest(A, B, 6)
-print kthSmallest(A, B, 7)
-print kthSmallest(A, B, 8)
-print kthSmallest(A, B, 9)
-print kthSmallest(A, B, 10)
-print kthSmallest(A, B, 11)
-print kthSmallest(A, B, 12)
-print kthSmallest(A, B, 13)
+for i in range(14):
+    print kthSmallest(A, B, i)
