@@ -17,7 +17,7 @@ def max_max(A):
 
 		for i in range(2, len(A)):
 			if A[i] >= max2:                 		
-				max1 = max2_right 
+				max1 = max2
 				max2 = A[i]  
 			elif: A[i] >= max1
 				max1 = A[i] 
