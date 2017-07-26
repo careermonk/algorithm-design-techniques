@@ -10,7 +10,7 @@ def get_change(amount):
 		if amount < coin:
 			continue
 		count += amount // coin
-		selectedCoins.append(coin * (amount // coin))
+		selectedCoins.append([coin] * (amount // coin))
 		# Put remainder to the residuary amount.
 		amount %= coin
 
