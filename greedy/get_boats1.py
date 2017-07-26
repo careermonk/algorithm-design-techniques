@@ -1,8 +1,9 @@
+from collections import deque
 def get_boats(W, k):
-	N = len(W)
+	n = len(W)
 	lanky = deque()
 	bulky = deque()
-	for i in xrange(N - 1):
+	for i in xrange(n - 1):
 		if W[i] + W[-1] <= k:
 			lanky.append(W[i])
 		else:
