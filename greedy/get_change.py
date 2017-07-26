@@ -6,9 +6,9 @@ def get_change(amount):
 	count = 0
 	selectedCoins = []
 	for coin in coins:
-		# Update count with the the number of coins 'are held' in the amount.
 		if amount < coin:
 			continue
+		# Update count with the number of coins 'are held' in the amount.
 		count += amount // coin
 		selectedCoins.append([coin] * (amount // coin))
 		# Put remainder to the residuary amount.
