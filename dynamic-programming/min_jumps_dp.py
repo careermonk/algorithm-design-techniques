@@ -1,6 +1,6 @@
 def jumps(A):
 	n = len(A)
-	table = [float("infinity") for i in range (n+1)]
+	table = [float("infinity") for i in range (n)]
 	table[0] = 0
 	for i in range(n-1):
 		for j in range(1, A[i]+1):
