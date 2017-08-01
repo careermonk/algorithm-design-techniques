@@ -27,4 +27,4 @@ if __name__ == '__main__':
     E.append(Event(4, 8))
     E.append(Event(4, 10))
     X, profit = schedule_events(E)
-print X, "got the profit", profit
+print "Schedule", X, "got the profit", profit
