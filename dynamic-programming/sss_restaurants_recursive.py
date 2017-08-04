@@ -1,3 +1,13 @@
+# Copyright (c) June 02, 2017 CareerMonk Publications and others.
+# E-Mail           		: info@careermonk.com
+# Creation Date    		: 2017-06-02 06:15:46
+# Last modification		: 2017-06-02
+# Modified by		        : Narasimha Karumanchi
+# Book Title			: Algorithm Design Techniques
+# Warranty         		: This software is provided "as is" without any
+# 				 warranty; without even the implied warranty of
+# 				 merchantability or fitness for a particular purpose.
+
 def sss_restaurants(distances, profit, i, k):
 	def funct(i):
 		if i == 0:
@@ -12,4 +22,4 @@ def sss_restaurants(distances, profit, i, k):
 
 distances = [0, 2, 4, 5, 6]
 profits = [0, 10, 20, 40, 80]
-print sss_restaurants(distances, profits, len(distances)-1, 1)
+print sss_restaurants(distances, profits, len(distances)-1, 2)
