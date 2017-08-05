@@ -9,6 +9,8 @@
 # 				 merchantability or fitness for a particular purpose.
 
 def k_smallest( A, k ):
+	if k>= len(A):
+		return None
 	# sort the elements in ascending order
 	A.sort()
 	return A[:k]
