@@ -9,6 +9,8 @@
 # 				 merchantability or fitness for a particular purpose.
 
 def k_smallest( A, k ):
+	if k>= len(A):
+		return None
 	for i in range( k ):
 		smallest = i
 		for j in range( i + 1 , len(A) ):
