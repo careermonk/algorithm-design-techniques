@@ -70,9 +70,9 @@ class MaxHeap:
 		result = []
 		for X in range(k, len(A)):
 			m = self.maximum()
-			if X < m:
+			if A[X] < m:
 				self.delete_max()
-				self.insert(X)
+				self.insert(A[X])
 
 		while self.size > 0:
 			result.append(self.delete_max())
