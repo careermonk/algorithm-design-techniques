@@ -16,5 +16,4 @@ def pair_sum_k(A, K):
 				print A[i], A[j]
     
 A = [1, 2, 6, 3, 5, 7, 8, 4, 0, 6, 10, -8, 12]
-A.sort()
 print pair_sum_k(A, 12)
