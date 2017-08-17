@@ -26,11 +26,11 @@ def pathFinder( matrix , position , n ):
 		if  b != None:
 			return [ ( i , j ) ] + b
 
-matrix = [[ 1 , 1 , 1, 1 , 0], 
-		[ 0 , 1 , 0, 1 , 0], 
-		[ 0 , 1 , 0, 1 , 0], 
-		[ 0 , 1 , 0, 0 , 0], 
-		[ 1 , 1 , 1, 1 , 1] ]
+matrix = [  [ 1, 1, 1, 1, 0], 
+		[ 0, 1, 0, 1, 0], 
+		[ 0, 1, 0, 1, 0], 
+		[ 0, 0, 0, 1, 0], 
+		[ 1, 1, 1, 1, 1]]
 
 initialPosition = (0, 0)
 matrixSize = len(matrix)
