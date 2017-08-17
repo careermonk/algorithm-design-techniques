@@ -8,10 +8,6 @@
 # 				   warranty; without even the implied warranty of 
 # 				    merchantability or fitness for a particular purpose. 
 
-import re
-import random
-import os
-
 # GLOBAL VARIABLES
 grid_size = 81
 
@@ -27,6 +23,8 @@ def getTrialCelli(grid):
       
 def isValid(trialVal, trialCelli, grid):
 	cols = 0
+	
+	# validate square
 	for eachSq in range(9):
 		trialSq = [ x+cols for x in range(3) ] + [ x+9+cols for x in range(3) ] + [ x+18+cols for x in range(3) ]
 		cols +=3
@@ -38,7 +36,8 @@ def isValid(trialVal, trialCelli, grid):
 					if trialVal == int(grid[i]):
 						print 'Square',
 						return False
-	  
+
+	# validate row
 	for eachRow in range(9):
 		trialRow = [ x+(9*eachRow) for x in range (9) ]
 		if trialCelli in trialRow:
@@ -47,7 +46,8 @@ def isValid(trialVal, trialCelli, grid):
 					if trialVal == int(grid[i]):
 						print 'Row',
 						return False
-  
+
+	# validate column
 	for eachCol in range(9):
 		trialCol = [ (9*x)+eachCol for x in range (9) ]
 		if trialCelli in trialCol:
@@ -56,7 +56,7 @@ def isValid(trialVal, trialCelli, grid):
 					if trialVal == int(grid[i]):
 						print 'Column',
 						return False
-	print 'is legal.', 'So, set cell' ,trialCelli, 'with value', trialVal
+	print 'is legal.', 'So, set cell', trialCelli, 'with value', trialVal
 	return True
 
 def setCell(trialVal, trialCelli, grid):
@@ -124,10 +124,12 @@ def main ():
 				4, 7, 3, 8, 9, 2, 6, 5, 1, 
 				6, 8, 0, 0, 3, 1, 0, 4, 0, 
 				0, 0, 0, 0, 0, 0, 3, 8, 0]
+
 	printGrid(sampleGrid, 0)
 	if hasSolution (sampleGrid):
 		printGrid(sampleGrid, 0)
-	else: print 'NO SOLUTION'
+	else: 
+		print 'NO SOLUTION'
   
 if __name__ == "__main__":
     main()
