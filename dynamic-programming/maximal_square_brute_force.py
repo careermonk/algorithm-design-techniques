@@ -11,7 +11,7 @@
 def maximalSquare(matrix):
 	rows = len(matrix)
 	columns = len(matrix[0])
-    maxsqlen = 0
+	maxsqlen = 0
 	for i in range(rows):
 		for j in range(columns):
 			if (matrix[i][j] == 1) :
@@ -31,7 +31,7 @@ def maximalSquare(matrix):
 
 				if (maxsqlen < sqlen):
 					maxsqlen = sqlen
-        return maxsqlen * maxsqlen
+        return maxsqlen
 
 matrix=[[0,  1,  1,  0,  1], 
 		[1,  1,  0,  1,  0], 
