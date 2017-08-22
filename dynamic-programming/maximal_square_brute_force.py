@@ -20,7 +20,7 @@ def maximalSquare(matrix):
 				while (sqlen + i < rows and sqlen + j < columns and flag) :
 					for k in range(j, sqlen + j + 1):
 						if (matrix[i + sqlen][k] == '0') :
-							flag = false
+							flag = False
 							break
 					for k in range(i, sqlen + i + 1):
 						if (matrix[k][j + sqlen] == 0) :
