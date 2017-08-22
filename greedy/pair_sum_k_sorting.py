@@ -3,7 +3,7 @@
 # Creation Date    		: 2014-01-10 06:15:46 
 # Last modification		: 2008-10-31 
 #               by		: Narasimha Karumanchi 
-# Book Title			: Data Structures And Algorithmic Thinking With Python
+# Book Title			: Algorithm Design Techniques
 # Warranty         		: This software is provided "as is" without any 
 # 				   warranty; without even the implied warranty of 
 # 				    merchantability or fitness for a particular purpose. 
