@@ -15,7 +15,7 @@ def maximalSquare(matrix):
 	maxsqlen = 0
 	for i in xrange(0, len(matrix)):
 		for j in xrange(0, len(matrix[0])):
-			if matrix[i][j] == 1:
+			if matrix[i][j] is 1:
 				if i == 0:
 					L[i][j] = 1
 				elif j == 0:
