@@ -4,7 +4,7 @@ def majority_element(A):
 	n = len(A)
 	if n == 0:
 		return
-	for i in range(0, n-1):
+	for i in range(n):
 		if(count == 0) :
 			element = A[i]
 			count = 1
@@ -12,13 +12,17 @@ def majority_element(A):
 			count += 1
 		else:
 			count -= 1
-	return element
+
+	# check if elements appears for more than n/2 times
+	count = 0
+	for i in range(n):
+		if(element == A[i]):
+			count += 1
+	
+	if count > len(A)/2:
+		return element
+
+	return None
 
 A = [1, 2, 3, 4, 3, 3, 3, 3, 3, 2, 2, 3, 7, 3, 3, 3]
-print majority_element(A)
-A = [3, 3, 5, 2, 5, 5, 2, 5, 5]
-print majority_element(A)
-A = [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6]
-print majority_element(A)
-A = [1, 2, 3, 1, 2, 3, 1, 2, 3]
 print majority_element(A)
